@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 app.use(express.static(__dirname+'/static'));
-var server = app.listen(1337);
+var PORT = process.env.PORT || 1337;
+var server = app.listen(PORT);
 var io = require('socket.io').listen(server);
 var users = [];
 
